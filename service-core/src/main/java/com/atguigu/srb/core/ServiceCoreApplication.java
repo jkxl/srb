@@ -12,7 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
  * @create: 2021-09-06 17:03
  **/
 @SpringBootApplication
-@ComponentScan({"com.atguigu.srb"})
+@ComponentScan({"com.atguigu.srb", "com.atguigu.common"})
 public class ServiceCoreApplication {
     public static void main(String[] args) {
         SpringApplication.run(ServiceCoreApplication.class, args);
