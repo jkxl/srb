@@ -32,7 +32,28 @@ public class Swagger2Config {
                 .build();
     }
 
+    @Bean
+    public Docket webApiConfig() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .groupName("webApi")
+                .apiInfo(webApiInfo())
+                .select()
+                //只显示api路径下的页面
+                .paths(Predicates.and(PathSelectors.regex("/api/.*")))
+                .build();
+    }
+
     private ApiInfo adminApiInfo(){
+
+        return new ApiInfoBuilder()
+                .title("XXXX后台管理系统-API文档")
+                .description("本文档描述了XXXXX后台管理系统接口")
+                .version("1.0")
+                .contact(new Contact("Jack", "", "755344386@qq.com"))
+                .build();
+    }
+
+    private ApiInfo webApiInfo(){
 
         return new ApiInfoBuilder()
                 .title("XXXX后台管理系统-API文档")
